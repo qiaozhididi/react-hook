@@ -11,3 +11,13 @@ Hook 都是些函数，这些函数能让你不使用class的情况下还能 “
 状态：State
 
 ## React 16.8 新增的 Hook
+
+## State Hook
+
+### useState
+`useState` 是一个Hook，它本质是一个函数，接收初始状态，返回一个数组，其中包含两个值，第一个是当前状态，第二个是一个函数，用来更新状态。
+
+`useState()`方法里唯一的参数就是初始state。不同于class 的是，我们可以按照需要使用数字或字符串对其进行赋值，而不一定是对象。
+
+useState返回值为：当前 state 以及更新 state 的函数。
+
