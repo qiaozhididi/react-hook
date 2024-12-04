@@ -23,3 +23,8 @@ useState返回值为：当前 state 以及更新 state 的函数。
 
 ## Effect Hook
 Effect Hook 可以让你在函数组件中进行数据获取，设置订阅以及进行操作 DOM等，我们称他为副作用。
+
+### 清除Effect
+每个 Effect 都包括一个清除函数，这是一个可选的函数，它会在组件卸载时执行。
+
+你可以把 useEffect Hook 看做 componentDidMount，componentDidUpdate ,componentWillUnmount三个函数的组合。
