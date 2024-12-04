@@ -21,3 +21,5 @@ Hook 都是些函数，这些函数能让你不使用class的情况下还能 “
 
 useState返回值为：当前 state 以及更新 state 的函数。
 
+## Effect Hook
+Effect Hook 可以让你在函数组件中进行数据获取，设置订阅以及进行操作 DOM等，我们称他为副作用。

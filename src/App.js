@@ -1,5 +1,7 @@
 import "./App.css";
 import ClassDemo from "./ClassDemo";
+import ClassEffectDemo from "./EffectHook/ClassEffectDemoo";
+import FunEffectDemo from "./EffectHook/FunEffectDemo";
 import FunDemo from "./FunDemo";
 import HookUseState from "./StateHook/HookUseState";
 
@@ -10,6 +12,8 @@ function App() {
       <ClassDemo />
       <FunDemo />
       <HookUseState />
+      <ClassEffectDemo />
+      <FunEffectDemo />
     </div>
   );
 }
