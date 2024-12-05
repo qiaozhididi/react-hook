@@ -180,3 +180,28 @@ useContext(MyContext)
 useContext(MyContext) 用来读取 context 的值以及订阅 context 的变化。我们仍然需要在上层组件树中使用 <MyContext.Provider> 来为下层组件提供 context
 
 useContext(MyContext) 相当于 class 组件中的 myClass.contextType = MyContext 或者 <MyContext.Consumer>
+
+## useRef
+useRef(initialValue)
+
+useRef 返回一个可变的 ref 对象,使用useRef可以代替React.createRef()
+
+参数为其 .current 属性的初始值
+```js
+import React,{useRef} from 'react';
+
+
+export default function UseRefTest() {
+  const inputRef = useRef(null);
+  //访问inputRef的current属性就可以访问到inputDOM
+  return (
+    <div>
+      <input ref={inputRef}/>
+      <button onClick={()=>inputRef.current.focus()}>获得焦点</button>
+    </div>
+   );
+}
+
+
+
+```
