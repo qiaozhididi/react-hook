@@ -14,6 +14,7 @@ import HookRules from "./HookRules/HookRules";
 import User1 from "./HookRules/User1";
 import User2 from "./HookRules/User2";
 import HookUseState from "./StateHook/HookUseState";
+import UseCallbackDemo from "./UseCallback/UseCallbackDemo";
 import UseMemoDemo from "./UseMemo/UseMemoDemo";
 import UseRefDemo from "./UseRef/UseRefDemo";
 import UseRefDemo2 from "./UseRef/UseRefDemo2";
@@ -47,7 +48,8 @@ function App() {
       {/* <Parent /> */}
       {/* <UseRefDemo /> */}
       {/* <UseRefDemo2 /> */}
-      <UseMemoDemo />
+      {/* <UseMemoDemo /> */}
+      <UseCallbackDemo />
     </div>
   );
 }
