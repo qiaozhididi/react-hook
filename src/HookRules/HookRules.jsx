@@ -6,11 +6,11 @@ export default function HookRules(props) {
   //   if (props.title) {
   //     const [count, setCount] = useState(0);//报错
   //   }
-  //   const clickHandler = () => {
+    const clickHandler = () => {
   //     const [count, setCount] = useState(0); //报错
   //     setCount(count + 1);
   //     console.log(count);
-  //   };
+    };
   for (let i = 0; i < 10; i++) {
     // const [count, setCount] = useState(0); //报错
   }

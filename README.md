@@ -103,3 +103,71 @@ useEffect(() => {
 - 不要在循环，条件或嵌套函数中调用Hook，确保一直处于React的函数组件中执行。
 
 - eslint-plugin-react-hooks 的 ESLint 插件会检测hook的使用规则。
+
+## 自定义Hook
+什么情况下自定义Hook
+
+当我们想在两个或者多个函数之间共享逻辑时，我们会把它提取到第三个函数中。这实现共享逻辑的第三个函数就是Hook
+
+规则：
+- 自定义 Hook 是一个函数。
+- 其名称以 use开头。
+- 函数内部可以调用其他的 Hook。
+- 在两个组件中使用相同的 Hook 不会共享 state 。
+
+定义：
+```js
+
+//自定义的hook
+import { useEffect, useState } from "react";
+
+
+export default function useUserInfo(){
+  const [userInfo,setUserInfo]=useState({})
+
+
+  useEffect(()=>{
+    const info=JSON.parse(localStorage.getItem('userInfo')) 
+    setUserInfo(info)
+   },[])
+  return [userInfo,setUserInfo]
+}
+```
+
+使用：
+```js
+import React from 'react';
+import useUserInfo from '../components/useUserInfo'
+
+
+export default function User() {
+  const [userInfo,setUserInfo]=useUserInfo()
+  return (
+    <div>
+      <h3>我是第一个使用自定义Hook的组件</h3>
+       {userInfo.name}
+      <button onClick={()=>setUserInfo({name:'百战111'})}>更改用户信息</button>
+    </div>
+   );
+}
+
+
+
+import React from 'react';
+import useUserInfo from '../components/useUserInfo';
+
+
+export default function User1() {
+  const [userInfo,setUserInfo]=useUserInfo()
+  return (
+    <div>
+      <h3>我是第二个调用自定义hook的组件</h3>
+       {userInfo.name}
+      <button onClick={()=>setUserInfo({name:'百战222'})}>更改用户</button>
+    </div>
+   );
+}
+
+
+
+```
