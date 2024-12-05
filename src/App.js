@@ -9,6 +9,7 @@ import FunEffectDemo from "./EffectHook/FunEffectDemo";
 import LifeCycleComponent from "./EffectHook/LifeCycleComponent";
 import ParentComponent from "./EffectHook/ParentComponent";
 import FunDemo from "./FunDemo";
+import HookRules from "./HookRules/HookRules";
 import HookUseState from "./StateHook/HookUseState";
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
       {/* <EffectOnlyDemo /> */}
       {/* <EffectDataChange /> */}
       {/* <LifeCycleComponent /> */}
-      <EffectOut />
+      {/* <EffectOut /> */}
+      <HookRules title={"标题"} />
     </div>
   );
 }

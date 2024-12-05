@@ -56,3 +56,50 @@ useEffect(()=>{
 
 
 ### 使用多个Effect实现关注点分离
+使用 Hook 其中一个目的就是要解决 class 中生命周期函数经常包含所有逻辑问题
+
+可以使用多个 effect。这会将不相关逻辑分离到不同的 effect 中。
+
+```js
+useEffect(() => {
+  // 执行一些副作用操作
+  // console.log(count)
+  inputRef.current.value = `点击了${count}次`
+
+
+}, [count])
+
+
+
+
+// 传递第二个参数为[],代表effect只有在组件挂载的时候调用一次，
+//effect返回的函数会在组件卸载的时候调用一次
+useEffect(() => {
+  // console.log('effct')
+  const timer = setInterval(() => {
+    // console.log(new Date().toLocaleTimeString())
+    setTime(new Date().toLocaleTimeString())
+   }, 1000)
+
+
+  return () => {
+    // console.log('clear')
+    clearInterval(timer)
+   }
+}, [])
+
+
+useEffect(() => {
+  console.log(props.id)
+  // 发送网络请求
+}, [props.id])
+
+```
+
+- 使用Hook与使用生命周期相比较，业务逻辑更分明。
+
+## Hook 使用规则
+- 只在组件最顶层调用Hook
+- 不要在循环，条件或嵌套函数中调用Hook，确保一直处于React的函数组件中执行。
+
+- eslint-plugin-react-hooks 的 ESLint 插件会检测hook的使用规则。
