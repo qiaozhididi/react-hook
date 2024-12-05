@@ -171,3 +171,12 @@ export default function User1() {
 
 
 ```
+
+## useContext
+useContext(MyContext)
+
+参数为React.createContext 的返回值
+
+useContext(MyContext) 用来读取 context 的值以及订阅 context 的变化。我们仍然需要在上层组件树中使用 <MyContext.Provider> 来为下层组件提供 context
+
+useContext(MyContext) 相当于 class 组件中的 myClass.contextType = MyContext 或者 <MyContext.Consumer>

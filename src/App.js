@@ -1,5 +1,6 @@
 import "./App.css";
 import ClassDemo from "./ClassDemo";
+import Parent from "./Context/Parent";
 import ClassEffectDemo from "./EffectHook/ClassEffectDemoo";
 import EffectClassTimer from "./EffectHook/EffectClassTimer";
 import EffectDataChange from "./EffectHook/EffectDataChange";
@@ -37,9 +38,10 @@ function App() {
       {/* <LifeCycleComponent /> */}
       {/* <EffectOut /> */}
       {/* <HookRules title={"标题"} /> */}
-      <User1 />
-      <User2 />
-      <button onClick={clickStorageHandler}>存储信息</button>
+      {/* <User1 /> */}
+      {/* <User2 /> */}
+      {/* <button onClick={clickStorageHandler}>存储信息</button> */}
+      <Parent />
     </div>
   );
 }
